@@ -34,6 +34,7 @@ js.jqueryui==1.10.3
 js.jqueryui-tagit==2.0.24-2
 js.tinymce==4.0.2
 kotti-tinymce==0.4.1
+kotti_blog==0.4
 kotti_media==0.5.1
 lingua==1.5
 newrelic==2.18.1.15

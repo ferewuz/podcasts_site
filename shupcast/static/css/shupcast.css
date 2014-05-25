@@ -1,0 +1,11 @@
+a.logo {
+    background-image: url('../images/logo.png');
+    width: 50px;
+    height: 66px;
+    display: inline-block;
+}
+
+.navbar .nav-collapse .nav {
+    font-size: 1.5em;
+    margin-top: 25px;
+}
