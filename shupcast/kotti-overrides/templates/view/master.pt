@@ -25,6 +25,14 @@
   <body class="${request.user is not None and 'logged-in'}
                view-${request.view_name or 'default'}
                ${api.body_css_class}">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=305480042949411&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <nav tal:replace="api.render_template('kotti:templates/view/nav.pt')" />
     <div tal:condition="request.user is not None"
          tal:replace="api.render_template('kotti:templates/editor-bar.pt')" />
@@ -52,10 +60,12 @@
             </div>
           </div>
 
-          <div class="below-content"
-               tal:condition="page_slots.belowcontent"
-               tal:content="api.render_template('kotti:templates/render_content_slot.pt', slot=page_slots.belowcontent)">
-          </div>
+          <div class="below-content">
+
+              <div class="fb-like" data-href="https://www.facebook.com/shupcast" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-via="ShupCast" data-size="large">Tweet</a>
+              <a href="https://twitter.com/ShupCast" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ShupCast</a>
+            </div>
         </div>
 
         <div class="span3 right-column"
@@ -72,6 +82,8 @@
                tal:condition="snippets"
                tal:repeat="snippet snippets"
                tal:replace="structure snippet" />
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
