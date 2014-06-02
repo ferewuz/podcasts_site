@@ -36,6 +36,7 @@ js.tinymce==4.0.2
 kotti-tinymce==0.4.1
 kotti_blog==0.4
 kotti_media==0.5.1
+kotti_sitemap==0.1.1
 lingua==1.5
 newrelic==2.18.1.15
 peppercorn==0.4
